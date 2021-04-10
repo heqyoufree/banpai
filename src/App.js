@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 /* eslint-disable no-unused-vars */
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
@@ -267,6 +268,76 @@ export default function App() {
   const handleClose20 = () => {
     setOpen20(false);
   };
+  const [open21, setOpen21] = React.useState(false);
+  const handleClickOpen21 = () => {
+    setOpen21(true);
+  };
+  const handleClose21 = () => {
+    setOpen21(false);
+  };
+  const [open22, setOpen22] = React.useState(false);
+  const handleClickOpen22 = () => {
+    setOpen22(true);
+  };
+  const handleClose22 = () => {
+    setOpen22(false);
+  };
+  const [open23, setOpen23] = React.useState(false);
+  const handleClickOpen23 = () => {
+    setOpen23(true);
+  };
+  const handleClose23 = () => {
+    setOpen23(false);
+  };
+  const [open24, setOpen24] = React.useState(false);
+  const handleClickOpen24 = () => {
+    setOpen24(true);
+  };
+  const handleClose24 = () => {
+    setOpen24(false);
+  };
+  const [open25, setOpen25] = React.useState(false);
+  const handleClickOpen25 = () => {
+    setOpen25(true);
+  };
+  const handleClose25 = () => {
+    setOpen25(false);
+  };
+  const [open26, setOpen26] = React.useState(false);
+  const handleClickOpen26 = () => {
+    setOpen26(true);
+  };
+  const handleClose26 = () => {
+    setOpen26(false);
+  };
+  const [open27, setOpen27] = React.useState(false);
+  const handleClickOpen27 = () => {
+    setOpen27(true);
+  };
+  const handleClose27 = () => {
+    setOpen27(false);
+  };
+  const [open28, setOpen28] = React.useState(false);
+  const handleClickOpen28 = () => {
+    setOpen28(true);
+  };
+  const handleClose28 = () => {
+    setOpen28(false);
+  };
+  const [open29, setOpen29] = React.useState(false);
+  const handleClickOpen29 = () => {
+    setOpen29(true);
+  };
+  const handleClose29 = () => {
+    setOpen29(false);
+  };
+  const [open30, setOpen30] = React.useState(false);
+  const handleClickOpen30 = () => {
+    setOpen30(true);
+  };
+  const handleClose30 = () => {
+    setOpen30(false);
+  };
 
 
   const handleChange = (event, newValue) => {
@@ -359,14 +430,14 @@ export default function App() {
           <GridList cellHeight={200} className={classes.gridList}>
             <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
             </GridListTile>
-            {tileData.map((tile) => (
+            {tileData.map((tile, index) => (
               <GridListTile key={tile.img}>
                 <img src={tile.img} alt={tile.name} />
                 <GridListTileBar
                   title={tile.name}
-                  subtitle={<span>by: {tile.slogan}</span>}
+                  subtitle={<span>{tile.slogan}</span>}
                   actionIcon={
-                    <IconButton aria-label={`info about ${tile.name}`} className={classes.icon}>
+                    <IconButton aria-label={`info about ${tile.name}`} className={classes.icon} onClick={eval(`handleClickOpen${index + 20}`)}>
                       <InfoIcon />
                     </IconButton>
                   }
@@ -374,6 +445,27 @@ export default function App() {
               </GridListTile>
             ))}
           </GridList>
+          {tileData.map((tile, index) => {
+            return (
+              <Dialog onClose={eval(`handleClose${index + 20}`)} aria-labelledby="customized-dialog-title" open={eval(`open${index + 20}`)} fullWidth maxWidth='lg'>
+                <DialogTitle id="customized-dialog-title">
+                  {tile.name}
+                </DialogTitle>
+                <DialogContent dividers>
+                  <div
+                  style={{
+                    matgin: '0 auto',
+                  }}
+                  >
+                    <img src={tile.img} alt={tile.name} />
+                    <p>小组名称：{tile.name}</p>
+                    <p>小组口号：{tile.slogan}</p>
+                    <p>小组目标：{tile.aim}</p>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            )
+          })}
         </div>
       </TabPanel>
       <TabPanel value={value} index={4}>
@@ -385,7 +477,7 @@ export default function App() {
           }}
           >
           <List>
-            {[...new Array(10)].map((value, index) => {
+            {[...new Array(10)].map((_value, index) => {
               return (
                 <ListItem button onClick={eval(`handleClickOpen${index}`)}>
                   <ListItemText
@@ -407,7 +499,7 @@ export default function App() {
               )
             })}
           </List>
-          {[...new Array(10)].map((value, index) => {
+          {[...new Array(10)].map((_value, index) => {
             return (
               <Dialog onClose={eval(`handleClose${index}`)} aria-labelledby="customized-dialog-title" open={eval(`open${index}`)} fullWidth maxWidth='lg'>
                 <DialogTitle id="customized-dialog-title">
@@ -430,7 +522,7 @@ export default function App() {
           }}
           >
           <List>
-            {[...new Array(10)].map((value, index) => {
+            {[...new Array(10)].map((_value, index) => {
               return (
                 <ListItem button onClick={eval(`handleClickOpen${index + 10}`)}>
                   <ListItemText
@@ -452,7 +544,7 @@ export default function App() {
               )
             })}
           </List>
-          {[...new Array(10)].map((value, index) => {
+          {[...new Array(10)].map((_value, index) => {
             return (
               <Dialog onClose={eval(`handleClose${index + 10}`)} aria-labelledby="customized-dialog-title" open={eval(`open${index + 10}`)} fullWidth maxWidth='lg'>
                 <DialogTitle id="customized-dialog-title">
